@@ -75,7 +75,7 @@ class Ui_MainWindow(object):
         sound.export(dst, format="wav")
 
        
-        rate, data = wav.read('test.wav')
+        rate,data = wav.read('test.wav')
 
         
 

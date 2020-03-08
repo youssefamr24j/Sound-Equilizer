@@ -7,8 +7,19 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PopUpWindow import Ui_PopUpWindow
 
 class Ui_MainWindow(object):
+
+    def openWindow(self):
+        self.window= QtWidgets.QMainWindow()
+        self.ui =Ui_PopUpWindow()
+        self.ui.setupUi(self.window)
+        #ChangeItWindow.hide()
+        self.window.show()
+
+
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1268, 926)
@@ -292,6 +303,7 @@ class Ui_MainWindow(object):
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.gridLayout.setObjectName("gridLayout")
         self.NextPushButton = QtWidgets.QPushButton(self.gridLayoutWidget)
+        self.NextPushButton.clicked.connect(self.openWindow)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)

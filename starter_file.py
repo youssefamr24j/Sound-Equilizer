@@ -1,5 +1,6 @@
 from PyQt5 import QtWidgets
 from SoundEquilizer import Ui_MainWindow
+from PopUpWindow import Ui_PopUpWindow
 import sys
 
 
