@@ -17,6 +17,7 @@ class Ui_MainWindow(object):
         self.ui.setupUi(self.window)
         #ChangeItWindow.hide()
         self.window.show()
+        pass
 
 
 
