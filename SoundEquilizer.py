@@ -64,49 +64,53 @@ class Ui_MainWindow(object):
 
 
     def Open_Files(self):                                  #open file and read it
-        filename=QtWidgets.QFileDialog.getOpenFileName()
-        directory=filename[0]
+         filename=QtWidgets.QFileDialog.getOpenFileName()
+         directory=filename[0]
+         print("lalo")
+         print(filename)
+         src = directory
+         dst = "test.wav"
+         print("lalo")
+
+         #convert wav to mp3                                                            
+         sound = AudioSegment.from_mp3(src)
+         print("lalo")
+         sound.export(dst, format="wav")
+         print("lalo")
+
        
-        src = directory
-        dst = "test.wav"
-
-        # convert wav to mp3                                                            
-        sound = AudioSegment.from_mp3(src)
-        sound.export(dst, format="wav")
-
-       
-        rate,data = wav.read('test.wav')
+         rate,data = wav.read('test.wav')
 
         
 
-        fft_out = fft(data[:,0])
+         fft_out = fft(data[:,0])
 
-        # YMax=max(np.abs(fft_out))
-        # YMin=min(np.abs(fft_out))
-        # XMax=max(data[:,0])
-        # XMin=min(data[:,0])
+        #  YMax=max(np.abs(fft_out))
+        #  YMin=min(np.abs(fft_out))
+        #  XMax=max(data[:,0])
+        #  XMin=min(data[:,0])
         
 
 
         
-        # # plt.plot(data[:,0], np.abs(fft_out))
-        # # plt.show()
+         plt.plot(data[:,0], np.abs(fft_out))
+         plt.show()
 
-        # self.graphicsView.plotItem.getViewBox().setLimits(yMin=YMin,yMax=YMax)
-        # self.graphicsView.plotItem.getViewBox().setLimits(xMin=XMin,xMax=XMax)    
-        self.graphicsView.plot(data[:,0], np.abs(fft_out))
-        # self.graphicsView.plot(data[:,0])
+        #  self.graphicsView.plotItem.getViewBox().setLimits(yMin=YMin,yMax=YMax)
+        #  self.graphicsView.plotItem.getViewBox().setLimits(xMin=XMin,xMax=XMax)    
+         self.graphicsView.plot(data[:,0], np.abs(fft_out))
+         self.graphicsView.plot(data[:,0])
         
            
     
     
-        # mixer.init()
-        # mixer.music.load(directory)
-        # mixer.music.play()
-        # print(directory)
+        #  mixer.init()
+        #  mixer.music.load(directory)
+        #  mixer.music.play()
+        #  print(directory)
 
-        # c=0
-        # for i in data:
-        #     c+=1
-        # print(rate)
-        # print(c)
+        #  c=0
+        #  for i in data:
+        #      c+=1
+        #  print(rate)
+        #  print(c)

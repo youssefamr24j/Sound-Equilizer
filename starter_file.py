@@ -1,13 +1,14 @@
 from PyQt5 import QtWidgets
-from SoundEquilizer import Ui_MainWindow
-from PopUpWindow import Ui_PopUpWindow
+# from SoundEquilizer import Ui_MainWindow
+# from ChangeItWindow import Ui_ChangeItWindow
+from Welcome import Ui_Welcome
 import sys
 
 
 class ApplicationWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super(ApplicationWindow, self).__init__()
-        self.ui = Ui_MainWindow()
+        self.ui = Ui_Welcome()
         self.ui.setupUi(self)
      
 

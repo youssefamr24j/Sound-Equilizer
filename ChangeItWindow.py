@@ -7,19 +7,14 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PopUpWindow import Ui_PopUpWindow
+from ModifiedSignal import Ui_ModifiedSignal
 
-class Ui_MainWindow(object):
-
-    def openWindow(self):
+class Ui_ChangeItWindow(object):
+    def openChangeWindow(self):
         self.window= QtWidgets.QMainWindow()
-        self.ui =Ui_PopUpWindow()
+        self.ui =Ui_ModifiedSignal()
         self.ui.setupUi(self.window)
-        #ChangeItWindow.hide()
         self.window.show()
-        pass
-
-
 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -304,13 +299,13 @@ class Ui_MainWindow(object):
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.gridLayout.setObjectName("gridLayout")
         self.NextPushButton = QtWidgets.QPushButton(self.gridLayoutWidget)
-        self.NextPushButton.clicked.connect(self.openWindow)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.NextPushButton.sizePolicy().hasHeightForWidth())
         self.NextPushButton.setSizePolicy(sizePolicy)
         self.NextPushButton.setObjectName("NextPushButton")
+        self.NextPushButton.clicked.connect(self.openChangeWindow)
         self.gridLayout.addWidget(self.NextPushButton, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)

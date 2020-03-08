@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'PopUpWindow.ui'
+# Form implementation generated from reading ui file 'YourSignal.ui'
 #
 # Created by: PyQt5 UI code generator 5.13.0
 #
@@ -8,25 +8,23 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import pyqtgraph as pg
 
 
-class Ui_PopUpWindow(object):
+class Ui_YourSignal(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(801, 441)
+        MainWindow.resize(888, 658)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.PopUpWindow = QtWidgets.QGraphicsView(self.centralwidget)
-        self.PopUpWindow.setGeometry(QtCore.QRect(0, 0, 791, 391))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Ignored, QtWidgets.QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.PopUpWindow.sizePolicy().hasHeightForWidth())
-        self.PopUpWindow.setSizePolicy(sizePolicy)
-        self.PopUpWindow.setObjectName("PopUpWindow")
+        self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
+        self.gridLayout.setObjectName("gridLayout")
+        self.graphicsView = pg.PlotWidget(self.centralwidget)
+        self.graphicsView.setObjectName("graphicsView")
+        self.gridLayout.addWidget(self.graphicsView, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 801, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 888, 25))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -41,11 +39,12 @@ class Ui_PopUpWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
 
 
+
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_PopUpWindow()
+    ui = Ui_YourSignal()
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
