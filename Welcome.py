@@ -19,8 +19,8 @@ class Ui_Welcome(object):
         self.ui =Ui_Choose()
         self.ui.setupUi(self.window)
         self.window.show()
-        pass
 
+        
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(518, 364)
@@ -34,6 +34,7 @@ class Ui_Welcome(object):
         self.verticalLayout.setObjectName("verticalLayout")
         self.Upload = QtWidgets.QPushButton(self.verticalLayoutWidget)
         self.Upload.clicked.connect(self.openWindow)
+        self.Upload.clicked.connect(MainWindow.close)
         self.Upload.setObjectName("Upload")
         self.verticalLayout.addWidget(self.Upload)
         self.verticalLayoutWidget_2 = QtWidgets.QWidget(self.centralwidget)

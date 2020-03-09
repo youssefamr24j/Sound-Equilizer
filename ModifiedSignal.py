@@ -9,7 +9,6 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import pyqtgraph as pg
-from ChangeItWindow import Ui_ChangeItWindow
 from Final import Ui_Final
 
 
@@ -21,16 +20,8 @@ class Ui_ModifiedSignal(object):
         self.ui =Ui_Final()
         self.ui.setupUi(self.window)
         self.window.show()
-        
-        
-
-    def openChangeWindow(self):
-        self.window= QtWidgets.QMainWindow()
-        self.ui =Ui_ChangeItWindow()
-        self.ui.setupUi(self.window)
-        self.window.show()
-
-
+      
+      
 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -52,7 +43,7 @@ class Ui_ModifiedSignal(object):
         self.horizontalLayout.addWidget(self.pushButton_2)
         self.pushButton = QtWidgets.QPushButton(self.horizontalLayoutWidget)
         self.pushButton.setObjectName("pushButton")
-        self.pushButton.clicked.connect(self.openChangeWindow)
+        self.pushButton.clicked.connect(MainWindow.close)
         self.horizontalLayout.addWidget(self.pushButton)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)

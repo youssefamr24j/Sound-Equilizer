@@ -15,6 +15,7 @@ class Ui_ChangeItWindow(object):
         self.ui =Ui_ModifiedSignal()
         self.ui.setupUi(self.window)
         self.window.show()
+      
 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -340,3 +341,11 @@ class Ui_ChangeItWindow(object):
         
 
 
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_ChangeItWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())

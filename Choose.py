@@ -18,15 +18,16 @@ class Ui_Choose(object):
             self.ui =Ui_YourSignal()
             self.ui.setupUi(self.window)
             self.window.show()
-        
-        pass
+            
 
     def openChangeWindow(self):
         self.window= QtWidgets.QMainWindow()
         if (self.pushButton_2.clicked):
+        
             self.ui =Ui_ChangeItWindow()
             self.ui.setupUi(self.window)
             self.window.show()
+           
         
         
     
