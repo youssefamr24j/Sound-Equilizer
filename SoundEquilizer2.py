@@ -449,6 +449,7 @@ class Ui_SoundEquilizer(object):
             self.output2.append(complex(tx,ty))
 
         self.output2=ifft(self.output2)
+        self.output2=np.real(self.output2)
             
 
     def HamWind(self):
@@ -547,6 +548,8 @@ class Ui_SoundEquilizer(object):
             self.output2.append(complex(tx,ty))
 
         self.output2=ifft(self.output2)
+        self.output2=np.real(self.output2)
+        
 
 
     def HanWind(self):
@@ -645,6 +648,7 @@ class Ui_SoundEquilizer(object):
             self.output2.append(complex(tx,ty))
 
         self.output2=ifft(self.output2)
+        self.output2=np.real(self.output2)
 
         
 

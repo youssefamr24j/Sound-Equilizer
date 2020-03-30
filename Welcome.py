@@ -211,7 +211,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.Upload.setText(_translate("MainWindow", "Upload your Song"))
         self.Upload.clicked.connect(lambda:self.UploadSong(MainWindow))
-        self.Welcome.setText(_translate("MainWindow", "Welcome to Your Sound Equilizer !!"))
+        self.Welcome.setText(_translate("MainWindow", "         Welcome to Your Sound Equilizer !!"))
         
   
 
